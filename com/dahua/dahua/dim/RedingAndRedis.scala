@@ -1,13 +1,11 @@
-package com.dahua.dim
+package com.dahua.dahua.dim
 
-import com.dahua.bean.Logbean
-import com.dahua.utils.RedisUtil
+import com.dahua.dahua.bean.Logbean
+import com.dahua.dahua.utils.RedisUtil
 import org.apache.spark.rdd.RDD
-import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.sql.SparkSession
+import org.apache.spark.{SparkConf, SparkContext}
 import redis.clients.jedis.Jedis
-
-import scala.sys.SystemProperties.headless.key
 
 object RedingAndRedis {
 
@@ -31,8 +29,6 @@ object RedingAndRedis {
       .getOrCreate()
 
     val sc: SparkContext = spark.sparkContext
-
-    import spark.implicits._
 
     var Array(inputpath) = args
     val log: RDD[String] = sc.textFile(inputpath)

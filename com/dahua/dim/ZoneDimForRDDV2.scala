@@ -62,9 +62,5 @@ object ZoneDimForRDDV2 {
       list1.zip(list2).map(t=>t._1+t._2)
     }).foreach(println)
 
-
-
-
-
   }
 }

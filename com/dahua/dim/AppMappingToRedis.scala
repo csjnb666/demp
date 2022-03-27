@@ -37,9 +37,11 @@ object AppMappingToRedis {
       (arr(0),arr(1))
 
     }).foreachPartition(ite=>{
+      //连接redis
       val jedis: Jedis = RedisUtil.getJedis
 
       ite.foreach(mapping=>{
+        //向redis中存储数据
         jedis.set(mapping._1,mapping._2)
       })
       jedis.close()

@@ -1,4 +1,4 @@
-package com.dahua.dahua.analyes
+package com.dahua.analyes
 
 import com.typesafe.config.{Config, ConfigFactory}
 import org.apache.spark.{SparkConf, SparkContext}

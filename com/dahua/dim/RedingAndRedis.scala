@@ -1,7 +1,7 @@
-package com.dahua.dahua.dim
+package com.dahua.dim
 
-import com.dahua.dahua.bean.Logbean
-import com.dahua.dahua.utils.RedisUtil
+import com.dahua.bean.Logbean
+import com.dahua.utils.RedisUtil
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.{SparkConf, SparkContext}

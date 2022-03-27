@@ -1,15 +1,15 @@
-package com.dahua.dahua.analyes
+package com.dahua.task
 
+import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.rdd.RDD
-import org.apache.spark.{HashPartitioner, SparkConf, SparkContext}
 import org.apache.spark.sql.SparkSession
 
-
-object ProCityAnalyesForRDD {
-
+object Task01 {
+  // 需求1： 统计各个省份分布情况，并排序
   def main(args: Array[String]): Unit = {
+
     //判断参数
-    if(args.length !=2){
+    if (args.length != 2) {
       println(
         """
           |缺少参数
@@ -24,29 +24,22 @@ object ProCityAnalyesForRDD {
       .builder()
       .config(conf)
       .appName("ProCityAnalyesForRDD")
-      .master("local[*]")
+      .master("local[1]")
       .getOrCreate()
 
     val sc: SparkContext = spark.sparkContext
 
-    var Array(inputpath,outputpath) =args
+    var Array(inputpath, outputpath) = args
 
     val line: RDD[String] = sc.textFile(inputpath)
     val filed: RDD[Array[String]] = line.map(_.split(",", -1))
-    val procityRdd: RDD[((String, String), Int)] = filed.filter(_.length >= 85).map(arr => {
-      ((arr(24), arr(25)), 1)
+    val rdd: RDD[(String, Int)] = filed.filter(_.length >= 85).map(arr => {
+      (arr(24), 1)
     })
 
-    //降维
-    val reduceRdd: RDD[((String, String), Int)] = procityRdd.reduceByKey(_ + _)
-    val rdd1: RDD[(String, (String, Int))] = reduceRdd.map(arr => {
-      (arr._1._1, (arr._1._2, arr._2))
-    })
-    val num: Long = rdd1.map(x => {
-      (x._1, 1)
-    }).reduceByKey(_ + _).count()
-
-    rdd1.partitionBy(new HashPartitioner(num.toInt)).saveAsTextFile(outputpath)
+    val rdd1: RDD[(String, Int)] = rdd.reduceByKey(_ + _)
+    val rdd2: RDD[(String, Int)] = rdd1.sortByKey()
+    rdd2.saveAsTextFile(outputpath)
 
     spark.stop()
     sc.stop()

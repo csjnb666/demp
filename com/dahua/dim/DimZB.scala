@@ -1,4 +1,4 @@
-package com.dahua.dahua.dim
+package com.dahua.dim
 
 object DimZB {
 

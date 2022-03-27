@@ -1,4 +1,4 @@
-package com.dahua.dahua.analyes
+package com.dahua.analyes
 
 import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.fs.{FileSystem, Path}

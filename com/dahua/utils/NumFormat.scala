@@ -1,4 +1,4 @@
-package com.dahua.dahua.utils
+package com.dahua.utils
 
 object NumFormat {
 

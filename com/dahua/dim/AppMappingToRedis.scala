@@ -1,6 +1,6 @@
-package com.dahua.dahua.dim
+package com.dahua.dim
 
-import com.dahua.dahua.utils.RedisUtil
+
 import com.dahua.utils.RedisUtil
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.sql.SparkSession

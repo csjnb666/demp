@@ -1,6 +1,6 @@
-package com.dahua.dahua.bean
+package com.dahua.bean
 
-import com.dahua.dahua.utils.NumFormat
+import com.dahua.utils.NumFormat
 import com.dahua.utils.NumFormat
 
 class Logbean(

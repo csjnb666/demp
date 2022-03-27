@@ -1,4 +1,4 @@
-package com.dahua.dahua.dim
+package com.dahua.dim
 
 import com.typesafe.config.{Config, ConfigFactory}
 import org.apache.spark.{SparkConf, SparkContext}

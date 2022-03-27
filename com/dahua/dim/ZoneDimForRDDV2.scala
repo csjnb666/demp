@@ -1,7 +1,7 @@
-package com.dahua.dahua.dim
+package com.dahua.dim
 
 
-import com.dahua.dahua.bean.Logbean
+import com.dahua.bean.Logbean
 import org.apache.spark.broadcast.Broadcast
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}

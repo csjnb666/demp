@@ -1,4 +1,4 @@
-package com.dahua.dahua.dim
+package com.dahua.dim
 
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.sql.{DataFrame, Dataset, SparkSession}

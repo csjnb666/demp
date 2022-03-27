@@ -1,6 +1,6 @@
-package com.dahua.dahua.tools
+package com.dahua.tools
 
-import com.dahua.dahua.utils.{LogSchema, NumFormat}
+import com.dahua.utils.{LogSchema, NumFormat}
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.sql.{DataFrame, Row, SparkSession}

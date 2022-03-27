@@ -1,4 +1,4 @@
-package com.dahua.dahua.tools
+package com.dahua.tools
 
 import com.dahua.bean.Logbean
 import org.apache.spark.rdd.RDD

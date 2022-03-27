@@ -1,4 +1,4 @@
-package com.dahua.dahua.utils
+package com.dahua.utils
 
 import org.apache.spark.sql.types.{DoubleType, IntegerType, StringType, StructField, StructType}
 

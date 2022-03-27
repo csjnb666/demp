@@ -1,4 +1,4 @@
-package com.dahua.dahua.task
+package com.dahua.task
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.SparkSession

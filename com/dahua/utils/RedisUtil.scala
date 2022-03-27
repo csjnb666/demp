@@ -1,4 +1,4 @@
-package com.dahua.dahua.utils
+package com.dahua.utils
 
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig
 import redis.clients.jedis.JedisPool

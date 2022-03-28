@@ -8,7 +8,10 @@ import org.apache.spark.{SparkConf, SparkContext}
 import redis.clients.jedis.Jedis
 
 object RedingAndRedis {
-
+  /**
+   * 从redis中读取数据
+   * @param args
+   */
   def main(args: Array[String]): Unit = {
     if (args.length != 1) {
       println(

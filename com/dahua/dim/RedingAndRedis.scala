@@ -43,12 +43,14 @@ object RedingAndRedis {
       //如果appname等于空或者appname为空 就从redis中读取数据
       if (appname == "" || appname.isEmpty) {
         val jedis: Jedis = RedisUtil.getJedis
+        //如果appid不为空 则取出来 反之则不明确
         if (jedis.get(log.appid) != null && jedis.get(log.appid).nonEmpty)
           appname = jedis.get(log.appid)
         else {
           (log.appid, "不明确")
         }
       }
+      //原始请求数
       val ysqqs: List[Double] = DimZB.qqsRtp(log.requestmode, log.processnode)
 
       (appname, ysqqs)

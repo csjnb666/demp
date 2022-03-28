@@ -56,7 +56,6 @@ object RedingAndRedis {
       (appname, ysqqs)
     }).reduceByKey((list1, list2) => {
       //拉链 两个集合的合并操作，合并后每个元素是一个 对偶元组。
-      //// 拉链
       //    val list1 = List(1, 2, 3)
       //    val list2 = List(4, 5, 6)
       //    val list3 = list1.zip(list2) // (1,4),(2,5),(3,6)
